@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡️ Asad's Link Hub</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for the Doodle Pop Vibe -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Light Base
+                        'pop-base': '#F0F4F8', 
+                        // Vibrant Accent Blue
+                        'pop-blue': '#4C7CFF',
+                        // High Contrast Accent Yellow
+                        'pop-yellow': '#FFCE54',
+                        // Dark Text
+                        'pop-dark': '#1A202C',
+                        // Card Background
+                        'pop-card': '#FFFFFF',
+                    },
+                    boxShadow: {
+                        // Fun, visible shadow for the pop effect
+                        'pop-shadow': '8px 8px 0px rgba(76, 124, 255, 0.7)', 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Keyframes for the subtle background animation */
+        @keyframes subtle-shift {
+            0% { background-color: #F0F4F8; }
+            50% { background-color: #F4F8F0; }
+            100% { background-color: #F0F4F8; }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+            animation: subtle-shift 15s ease infinite alternate; /* Apply animation */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Style for the link buttons: Clean, bordered, with a dynamic hover */
+        .pop-link {
+            transition: all 0.2s ease-out;
+            background-color: white;
+            border: 2px solid #1A202C; /* Black border for defined shape */
+            color: #1A202C; /* Dark text */
+            box-shadow: 4px 4px 0px #FFCE54; /* Initial yellow shadow */
+        }
+
+        .pop-link:hover {
+            transform: translateY(-2px); 
+            background-color: #4C7CFF; /* Vibrant Blue background on hover */
+            color: white; /* White text on hover */
+            box-shadow: 6px 6px 0px #FFCE54; /* Deeper shadow on hover */
+            border-color: #4C7CFF; /* Blue border on hover */
+        }
+
+        /* SVG Icon styling */
+        .icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            stroke-width: 2.5;
+            transition: stroke 0.2s, fill 0.2s;
+            stroke: #4C7CFF; /* Vibrant Blue stroke initially */
+        }
+
+        .pop-link:hover .icon {
+            stroke: white; /* White stroke on hover */
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <!-- Confirmation Message for Copy Link -->
+    <div id="copy-message" class="fixed top-5 left-1/2 -translate-x-1/2 bg-pop-dark text-white p-3 px-6 rounded-full shadow-lg opacity-0 scale-90 transition-all duration-300 z-50">
+        Copied to clipboard!
+    </div>
+
+    <!-- Main Content Card: The 'Link Hub' -->
+    <div data-username="[your-username]" id="link-card" 
+         class="w-full max-w-lg mx-auto bg-pop-card p-8 md:p-12 rounded-xl border-4 border-pop-blue shadow-pop-shadow">
+
+        <!-- Header / Profile Area -->
+        <header class="text-center mb-10">
+            
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide text-pop-dark uppercase mb-2">
+                Asad
+            </h1>
+            <p class="text-lg text-pop-blue font-medium mb-4">
+                Hit a Link Below!
+            </p>
+            <p class="text-base text-pop-dark/80 max-w-sm mx-auto mb-6">
+                Welcome! Tap a link to connect with me across all my platforms.
+            </p>
+
+            <!-- Feature: Copy Username Button -->
+            <button onclick="copyUsername(document.getElementById('link-card').dataset.username)"
+                    class="bg-pop-yellow text-pop-dark font-bold py-2 px-6 rounded-full transition-transform transform hover:scale-105 shadow-md text-sm border-2 border-pop-dark">
+                Copy @asa.d__
+            </button>
+        </header>
+
+        <!-- Links Section -->
+        <main class="space-y-4">
+            
+            <!-- Link 1: TikTok -->
+            <a href="https://www.tiktok.com/@asa.d__?_t=ZS-90AFQFzBAQ5&_r=1" target="_blank" class="pop-link flex items-center justify-center p-4 rounded-xl w-full text-xl font-semibold">
+                <!-- Music Icon (since TikTok is music/video focused) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="icon mr-3">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+                My TikTok Videos
+            </a>
+
+            <!-- Link 2: Snapchat -->
+            <a href="https://snapchat.com/t/vF2sNLQx" target="_blank" class="pop-link flex items-center justify-center p-4 rounded-xl w-full text-xl font-semibold">
+                <!-- Ghost Icon for Snapchat -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="icon mr-3">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+                Add Me on Snapchat
+            </a>
+            
+            <!-- Link 3: Instagram -->
+            <a href="https://www.instagram.com/asa.d__/" target="_blank" class="pop-link flex items-center justify-center p-4 rounded-xl w-full text-xl font-semibold">
+                <!-- Camera Icon for Instagram -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="icon mr-3">
+                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="16.5" y1="7.5" x2="16.5" y2="7.5"></line>
+                </svg>
+                Follow on Instagram
+            </a>
+
+            <!-- Link 4: Email (Contact) -->
+            <a href="mailto:069au069@gmail.com" class="pop-link flex items-center justify-center p-4 rounded-xl w-full text-xl font-semibold">
+                <!-- Email Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="icon mr-3">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.83 1.83 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                Send Me an Email
+            </a>
+
+        </main>
+
+        <!-- Footer / Signature -->
+        <footer class="mt-10 text-center text-sm text-pop-dark/60">
+            <p>Made with ⚡️ for easy connection!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Function to copy the username to the clipboard
+        function copyUsername(text) {
+            // Check if text is valid (to avoid copying the placeholder text)
+            if (text.includes('[your-username]')) {
+                // If it's still the placeholder, show an error (instead of an alert)
+                const msg = document.getElementById('copy-message');
+                msg.textContent = "Please set the username first!";
+                msg.classList.remove('opacity-0', 'scale-90');
+                msg.classList.add('opacity-100', 'scale-100', 'bg-red-500');
+                
+                setTimeout(() => {
+                    msg.classList.add('opacity-0', 'scale-90');
+                    msg.classList.remove('opacity-100', 'scale-100', 'bg-red-500');
+                    msg.textContent = "Copied to clipboard!"; // Reset message
+                }, 2000);
+                return;
+            }
+
+            // Create a temporary input element to hold the text
+            const tempInput = document.createElement('input');
+            tempInput.value = '@' + text; // Add the @ symbol when copying
+            document.body.appendChild(tempInput);
+            
+            // Select and copy the text
+            tempInput.select();
+            document.execCommand('copy');
+            
+            // Remove the temporary input
+            document.body.removeChild(tempInput);
+            
+            // Show confirmation message
+            const msg = document.getElementById('copy-message');
+            msg.textContent = "Copied @" + text + "!";
+            msg.classList.remove('opacity-0', 'scale-90');
+            msg.classList.add('opacity-100', 'scale-100');
+            
+            setTimeout(() => {
+                msg.classList.add('opacity-0', 'scale-90');
+                msg.classList.remove('opacity-100', 'scale-100');
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
